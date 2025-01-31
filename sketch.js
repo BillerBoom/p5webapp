@@ -20,7 +20,7 @@ function gotFaces(results) {
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight, WEBGL);
+  createCanvas(displayWidth,displayHeight, WEBGL);
   let constraints = {
     video : {
       facingMode:"environment"
