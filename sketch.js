@@ -27,10 +27,7 @@ function setup() {
     },
     audio : false
   };
-  aspectR= windowHeight/windowWidth
   video = createCapture(constraints);
-  x=video.width;
-  y=x*aspectR;
   video.hide();
   faceMesh.detectStart(video, gotFaces);
   triangles = faceMesh.getTriangles();
@@ -38,7 +35,7 @@ function setup() {
 }
 
 function draw() {
-  translate(-480 / 2, -900 / 2);
+  translate(-video.width / 2, -video.height / 2);
   background(0);
   image(video, 0, 0);
 
