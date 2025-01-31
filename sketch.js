@@ -13,7 +13,7 @@ function preload() {
 
 function mousePressed() {
   console.log(faces);
-  saveCanvas('Photo__R','png');
+  saveCanvas('pic00','png');
 }
 
 function gotFaces(results) {
