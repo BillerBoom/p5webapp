@@ -35,9 +35,9 @@ function setup() {
 }
 
 function draw() {
-  translate(-video.width / 2, -video.height / 2);
+  translate(-width / 2, -height / 2);
   background(0);
-  image(video, 0, 0,video.width,video.height);
+  image(video, 0, 0,width,height);
 
   if (faces.length > 0) {
     let face = faces[0];
