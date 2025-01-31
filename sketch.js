@@ -19,7 +19,7 @@ function gotFaces(results) {
 }
 
 function setup() {
-  createCanvas(720,1280, WEBGL);
+  createCanvas(windowWidth,windowHeight, WEBGL);
   let constraints = {
     video : {
       facingMode:"environment"
@@ -36,7 +36,7 @@ function setup() {
 function draw() {
   translate(-width / 2, -height / 2);
   background(0);
-  image(video, 0, 0,720,1280);
+  image(video, 0, 0,windowWidth,windowHeight);
 
   if (faces.length > 0) {
     let face = faces[0];
