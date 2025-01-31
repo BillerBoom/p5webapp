@@ -4,6 +4,7 @@ let faces = [];
 let triangles;
 let uvCoords;
 let img;
+let x,y;
 
 function preload() {
   faceMesh = ml5.faceMesh({ maxFaces: 1 });
@@ -26,7 +27,10 @@ function setup() {
     },
     audio : false
   };
+  aspectR= windowHeight/windowWidth
   video = createCapture(constraints);
+  x=video.width;
+  y=x*aspectR;
   video.hide();
   faceMesh.detectStart(video, gotFaces);
   triangles = faceMesh.getTriangles();
