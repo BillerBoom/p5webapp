@@ -19,14 +19,15 @@ function gotFaces(results) {
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight, WEBGL);
+  createCanvas(480,640, WEBGL);
   let constraints = {
     video : {
       facingMode:"environment"
-    }
+    },
+    audio : false
   };
   video = createCapture(constraints);
-  video.size(windowWidth,windowHeight)
+  video.size(480,640)
   video.hide();
   faceMesh.detectStart(video, gotFaces);
   triangles = faceMesh.getTriangles();
@@ -36,7 +37,7 @@ function setup() {
 function draw() {
   translate(-width / 2, -height / 2);
   background(0);
-  image(video, 0, 0,windowWidth,windowHeight);
+  image(video, 0, 0,480,640);
 
   if (faces.length > 0) {
     let face = faces[0];
