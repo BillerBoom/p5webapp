@@ -120,5 +120,39 @@ function draw() {
       vertex(pointC.x, pointC.y,  uvC[0], uvC[1]);
     }
     endShape();
+    
+    beginShape(TRIANGLE_STRIP);
+    noStroke();
+    for (let i = 0; i < leftEye.length; i++) {
+      let index = leftEye[i];
+      let keypoint = face.keypoints[index];
+      let uvPoint = uvCoords[index];
+      vertex(keypoint.x, keypoint.y, uvPoint[0],uvPoint[1]);
+    }
+    endShape();
+    
+    beginShape(TRIANGLE_STRIP);
+    noStroke();
+    for (let i = 0; i < rightEye.length; i++) {
+      let index = rightEye[i];
+      let keypoint = face.keypoints[index];
+      let uvPoint = uvCoords[index];
+      vertex(keypoint.x, keypoint.y, uvPoint[0],uvPoint[1]);
+    }
+    endShape();
   }
 }
+let leftEye = [
+  33,
+  7,
+  246,
+  163,
+  161,
+  144,
+  160,145,159,153,158,154,157,155,173,133,
+];
+
+let rightEye = [
+  362,398,382,384,381,385,380,386,374,387,373,388,390,466,249,263,
+  
+]
